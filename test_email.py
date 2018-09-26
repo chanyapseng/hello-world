@@ -2,7 +2,7 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-def autodesk_mail(subject, text, html, sender, receiver, cc, bcc):
+def send_mail(subject, text, html, sender, receiver, cc, bcc):
    """With this function we send out our html/text email"""
 
    # Create message container - the correct MIME type is multipart/alternative
@@ -28,7 +28,7 @@ def autodesk_mail(subject, text, html, sender, receiver, cc, bcc):
 
       # Connect to SMTP server
       print "Connecting to SMTP"
-      server = smtplib.SMTP('smtp.autodesk.com:25')
+      server = smtplib.SMTP('smtp.gmail.com:25')
 
       # Send the email
       print "Trying to send email"
@@ -83,6 +83,6 @@ if __name__ == "__main__":
    cc = 'chanyapseng@gmail.com'
    bcc = 'chanyapseng@gmail.com'
    
-   autodesk_mail("Test", text, html, sender, receiver, cc, bcc)
+   send_mail("Test", text, html, sender, receiver, cc, bcc)
 
 
